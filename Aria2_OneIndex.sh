@@ -275,8 +275,8 @@ make install
 cd /root
 rm -rf aria2 aria2-${aria2_new_ver}-linux-gnu-64bit-build1.tar.bz2
 mkdir "/root/.aria2" && cd "/root/.aria2"
-wget "https://www.moerats.com/usr/shell/Aria2/dht.dat"
-wget "https://www.moerats.com/usr/shell/Aria2/trackers-list-aria2.sh"
+mv /root/offline-of-OD/dht.dat /root/.aria2
+mv /root/offline-of-OD/trackers-list-aria2.sh /root/.aria2
 echo '' > /root/.aria2/aria2.session
 chmod +x /root/.aria2/trackers-list-aria2.sh
 chmod 777 /root/.aria2/aria2.session
