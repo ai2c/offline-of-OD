@@ -6,7 +6,7 @@
 ## 部署
 运行命令：
 
-`wget https://www.moerats.com/usr/shell/Aria2_OneIndex.sh && bash Aria2_OneIndex.sh`
+`git clone https://github.com/ai2c/offline-of-OD.git && cd offline-of-OD && bash Aria2_OneIndex.sh`
 
 按要求输入以下选项：
 
