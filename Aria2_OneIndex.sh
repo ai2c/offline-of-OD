@@ -325,15 +325,17 @@ echo "0 3 */7 * * /root/.aria2/trackers-list-aria2.sh
 
 init_install(){
 echo -e "${Green} 开始配置Aria2自启和自动上传 ${Font}"
-wget --no-check-certificate https://www.moerats.com/usr/shell/Aria2/aria2 -O /etc/init.d/aria2
+mv /root/offline-of-OD/aria2 /etc/init.d/
 chmod +x /etc/init.d/aria2
 update-rc.d -f aria2 defaults
-cd /root/.aria2
-wget https://www.moerats.com/usr/shell/OneIndexupload.sh
-sed -i '4i\domain='${domain}'' OneIndexupload.sh
-sed -i '4i\folder='${folder}'' OneIndexupload.sh
+mv /root/offline-of-OD/OneIndexupload.sh /root/.aria2
 chmod +x /root/.aria2/OneIndexupload.sh
-echo -e "${Green} 请选择nano编辑后输入Ctrl+x退出，或者选择其它编辑器并退出 ${Font}"
+wget --no-check-certificate -q -O /tmp/OneDrive.sh "https://raw.githubusercontent.com/iiiiiii1/OneDrive/master/OneDrive.sh"
+chmod +x /tmp/OneDrive.sh
+bash /tmp/OneDrive.sh
+echo -e "${Green} 将返回的网址复制到浏览器打开(此处需要梯子)，再登陆你的OneDrive for Business账号，登陆成功后复制地址栏中的地址，并提取code的字段(就是code=后面至&前面)，粘贴到SSH客户端里，敲回车键即可 ${Font}"
+onedrive -a
+cd /root/.aria2
 crontab -e
 bash /etc/init.d/aria2 start
 }
