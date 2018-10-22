@@ -336,7 +336,6 @@ bash /tmp/OneDrive.sh
 echo -e "${Green} 将返回的网址复制到浏览器打开(此处需要梯子)，再登陆你的OneDrive for Business账号，登陆成功后复制地址栏中的地址，并提取code的字段(就是code=后面至&前面)，粘贴到SSH客户端里，敲回车键即可 ${Font}"
 onedrive -a
 cd /root/.aria2
-crontab -e
 bash /etc/init.d/aria2 start
 }
 
